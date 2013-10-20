@@ -2,6 +2,8 @@ package org.n3r.demo;
 
 import org.n3r.quartz.glass.job.annotation.GlassJob;
 import org.n3r.quartz.glass.job.annotation.JobArgument;
+import org.n3r.quartz.glass.log.joblog.JobLog;
+import org.n3r.quartz.glass.log.joblog.JobLogs;
 
 import java.util.Date;
 
@@ -11,6 +13,6 @@ public class WebJob {
     private String who;
 
     public void execute() {
-        System.out.println("网页JOB" + new Date());
+        JobLogs.info("网页JOB" + new Date());
     }
 }

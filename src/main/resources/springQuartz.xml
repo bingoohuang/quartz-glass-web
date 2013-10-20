@@ -8,6 +8,11 @@
        ">
     <context:component-scan base-package="org.n3r.demo"/>
 
+    <bean id="demoJobScanner" class="org.n3r.quartz.glass.web.util.JobsScanner">
+        <property name="basePackage" value="org.n3r.quartz.glass.job.demo, org.n3r.demo"/>
+    </bean>
+
+
     <bean id="POJO每1分钟干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
         <property name="jobClass" value="org.n3r.demo.WebJob"/>
         <property name="scheduler" value="Every 1 minute"/>
