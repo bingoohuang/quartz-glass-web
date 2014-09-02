@@ -43,6 +43,11 @@
         <property name="triggerDataMap" value="orderType=退货订单,logLevel=INFO"/>
     </bean>
 
+    <bean id="AutowiredBean每30秒干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
+        <property name="jobClass" value="org.n3r.quartz.glass.job.demo.AutoWirePojoJob"/>
+        <property name="scheduler" value="Every 30 seconds"/>
+    </bean>
+
     <bean id="WebJob每1分钟干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
         <property name="jobClass" value="org.n3r.demo.WebJob"/>
         <property name="scheduler" value="Every 1 minute"/>

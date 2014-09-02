@@ -4,15 +4,11 @@
 
     <context-param>
         <param-name>contextClass</param-name>
-        <param-value>
-            org.springframework.web.context.support.AnnotationConfigWebApplicationContext
-        </param-value>
+        <param-value>org.springframework.web.context.support.AnnotationConfigWebApplicationContext</param-value>
     </context-param>
     <context-param>
         <param-name>contextConfigLocation</param-name>
-        <param-value>
-            org.n3r.quartz.glass.SpringConfig
-        </param-value>
+        <param-value>org.n3r.quartz.glass.SpringConfig</param-value>
     </context-param>
 
     <listener>
