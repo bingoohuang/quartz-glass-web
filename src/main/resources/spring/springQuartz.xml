@@ -9,7 +9,12 @@
     <context:component-scan base-package="org.n3r.demo"/>
 
     <bean id="demoJobScanner" class="org.n3r.quartz.glass.web.util.JobsScanner">
-        <property name="basePackage" value="org.n3r.quartz.glass.job.demo, org.n3r.demo"/>
+        <property name="basePackage" value="org.n3r.demo"/>
+    </bean>
+
+    <bean class="org.n3r.quartz.glass.diamond.DiamondTriggersFactoryBean">
+        <property name="group" value="glass"/>
+        <property name="dataId" value="triggers"/>
     </bean>
 
 
