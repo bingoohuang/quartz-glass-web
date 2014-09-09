@@ -14,7 +14,8 @@
 
     <bean class="org.n3r.quartz.glass.diamond.DiamondTriggersFactoryBean">
         <property name="group" value="glass"/>
-        <property name="dataId" value="triggers"/>
+        <property name="dataId" value="prop.triggers"/>
+        <property name="format" value="prop"/>
     </bean>
 
 
