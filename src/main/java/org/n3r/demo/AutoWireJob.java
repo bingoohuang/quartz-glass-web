@@ -12,8 +12,11 @@ import org.springframework.beans.factory.annotation.Autowired;
 public class AutoWireJob implements Job {
     @Autowired
     private Configuration configuration;
+    @Autowired
+    MyService myService;
 
     public void execute(JobExecutionContext context) {
+        myService.pringMe();
         JobLogs.info("AutoWireJob {}, configuration :{}", this, configuration);
     }
 }
