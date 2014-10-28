@@ -12,11 +12,11 @@
         <property name="basePackage" value="org.n3r.demo"/>
     </bean>
 
-    <bean class="org.n3r.quartz.glass.diamond.DiamondTriggersFactoryBean">
-        <property name="group" value="glass"/>
-        <property name="dataId" value="prop.triggers"/>
-        <property name="format" value="prop"/>
-    </bean>
+    <!--<bean class="org.n3r.quartz.glass.diamond.DiamondTriggersFactoryBean">-->
+        <!--<property name="group" value="glass"/>-->
+        <!--<property name="dataId" value="prop.triggers"/>-->
+        <!--<property name="format" value="prop"/>-->
+    <!--</bean>-->
 
 
     <!--<bean id="MyJob每30分钟" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">-->
@@ -49,14 +49,24 @@
         <!--<property name="triggerDataMap" value="orderType=退货订单,logLevel=INFO"/>-->
     <!--</bean>-->
 
-    <!--<bean id="AutowiredBean每30秒干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">-->
-        <!--<property name="jobClass" value="org.n3r.demo.AutoWirePojoJob"/>-->
-        <!--<property name="scheduler" value="Every 30 seconds"/>-->
-    <!--</bean>-->
+    <bean id="AutowiredBean每30秒干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
+        <property name="jobClass" value="org.n3r.demo.AutoWireComponentJob"/>
+        <property name="scheduler" value="Every 30 seconds"/>
+    </bean>
 
-    <!--<bean id="WebJob每1分钟干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">-->
-        <!--<property name="jobClass" value="org.n3r.demo.WebJob"/>-->
-        <!--<property name="scheduler" value="Every 1 minute"/>-->
-        <!--<property name="triggerDataMap" value="who=冰果皇"/>-->
-    <!--</bean>-->
+    <bean id="WebJob每30s干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
+        <property name="jobClass" value="org.n3r.demo.WebJob"/>
+        <property name="scheduler" value="Every 30 seconds"/>
+        <property name="triggerDataMap" value="who=bingoo,count=1"/>
+    </bean>
+    <bean id="WebJob每40s干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
+        <property name="jobClass" value="org.n3r.demo.WebJob"/>
+        <property name="scheduler" value="Every 40 seconds"/>
+        <property name="triggerDataMap" value="who=huang,count=2"/>
+    </bean>
+    <bean id="WebJob每45s干活" class="org.n3r.quartz.glass.job.GlassTriggerFactoryBean">
+        <property name="jobClass" value="org.n3r.demo.WebJob"/>
+        <property name="scheduler" value="Every 45 seconds"/>
+        <property name="triggerDataMap" value="who=dingoo,count=3"/>
+    </bean>
 </beans>

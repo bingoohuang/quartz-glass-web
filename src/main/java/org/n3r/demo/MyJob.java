@@ -15,10 +15,17 @@ public class MyJob implements Job {
     @Override
     public void execute(JobExecutionContext context) throws JobExecutionException {
         try {
-            Thread.sleep(3000);
+            Thread.sleep(1000);
         } catch (InterruptedException e) {
             e.printStackTrace();
         }
-        JobLogs.warn("静态化类型是: {}", staticType);
+
+        JobDataMap jobDataMap = context.getJobDetail().getJobDataMap();
+
+        Integer count = (Integer)jobDataMap.get("count");
+        if (count == null) count = 0;
+
+        jobDataMap.put("count", ++count);
+        JobLogs.warn("静态化类型是: {}, this:{}, count:{}", staticType, this, count);
     }
 }

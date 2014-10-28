@@ -10,8 +10,15 @@ import java.util.Date;
 public class WebJob {
     @JobArgument(description = "人名")
     private String who;
+    @JobArgument(description = "count")
+    private int count;
 
     public void execute() {
-        JobLogs.info("网页JOB" + new Date());
+        try {
+            Thread.sleep(100);
+        } catch (InterruptedException e) {
+            e.printStackTrace();
+        }
+        JobLogs.info("网页JOB：" + who + " at " + new Date() + " " + this + " count:" + (count));
     }
 }
